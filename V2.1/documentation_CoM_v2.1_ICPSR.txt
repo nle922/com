@@ -1,0 +1,7 @@
+CoM Data Version 2.0.1
+
+Since uploading version 2 to ICPSR, a few additional changes have been made. Rather than upload a whole new version of the dataset, we are providing instructions for how to update the ICPSR file.
+
+1. A new version of the CPP dataset was released. To update with these new places simply run build_CoM_v2.do file making sure the prepare_CPP_data line is commented in. The new version of the CPP data is in the proper directory. 
+
+2. Andrew Holt did some additional cleaning of establishment geographies. These are collected in holt_fixes.do. It should be possible to simply run this on the ICPSR file with no modifications necessary. A call to this code has also been added to the build_CoM_v2.do file.
