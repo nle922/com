@@ -1,0 +1,77 @@
+//rename variables for industry 610 in 1933
+
+//Create obs_id
+do "$rootDir_code/General/gen_obsID.do"
+
+//rename output variables
+rename AR gp_s_group_prod1
+rename AS gp_s_number_prod1
+rename AT gp_s_electrochemical_prod1
+rename AU gp_s_prod1
+rename AV gp_s_strength_prod1
+rename AW gp_s_quality_prod1
+rename AX gp_unit_prod1
+rename AY gp_q_consumed_prod1
+rename AZ gp_q_prod1																		
+rename BA gp_v_prod1
+rename BB gp_s_group_prod2
+rename BC gp_s_number_prod2
+rename BD gp_s_electrochemical_prod2
+rename BE gp_s_prod2
+rename BF gp_s_strength_prod2
+rename BG gp_s_quality_prod2
+rename BH gp_unit_prod2
+rename BI gp_q_consumed_prod2
+rename BJ gp_q_prod2																		
+rename BK gp_v_prod2
+rename BL gp_s_group_prod3
+rename BM gp_s_number_prod3
+rename BN gp_s_electrochemical_prod3
+rename BO gp_s_prod3
+rename BP gp_s_strength_prod3
+rename BQ gp_s_quality_prod3
+rename BR gp_unit_prod3
+rename BS gp_q_consumed_prod3
+rename BT gp_q_prod3																		
+rename BU gp_v_prod3
+rename BV gp_s_group_prod4
+rename BW gp_s_number_prod4
+rename BX gp_s_electrochemical_prod4
+rename BY gp_s_prod4
+rename BZ gp_s_strength_prod4
+rename CA gp_s_quality_prod4
+rename CB gp_unit_prod4
+rename CC gp_q_consumed_prod4
+rename CD gp_q_prod4																		
+rename CE gp_v_prod4
+rename CF gp_s_group_prod5
+rename CG gp_s_number_prod5
+rename CH gp_s_electrochemical_prod5
+rename CI gp_s_prod5
+rename CJ gp_s_strength_prod5
+rename CK gp_s_quality_prod5
+rename CL gp_unit_prod5
+rename CM gp_q_consumed_prod5
+rename CN gp_q_prod5																		
+rename CO gp_v_prod5
+rename CP gp_s_group_prod6
+rename CQ gp_s_number_prod6
+rename CR gp_s_electrochemical_prod6
+rename CS gp_s_prod6
+rename CT gp_s_strength_prod6
+rename CU gp_s_quality_prod6
+rename CV gp_unit_prod6
+rename CW gp_q_consumed_prod6
+rename CX gp_q_prod6																		
+rename CY gp_v_prod6
+rename CZ gp_s_chemByproducts1
+rename DA gp_v_chemByproducts1
+rename DB gp_s_chemByproducts2
+rename DC gp_v_chemByproducts2
+rename DD gp_s_allOtherProducts1
+rename DE gp_v_allOtherProducts1
+rename DF gp_s_allOtherProducts2
+rename DG gp_v_allOtherProducts2
+rename DH g000v
+
+rename DI ewemt
