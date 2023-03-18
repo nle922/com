@@ -1,0 +1,61 @@
+The new version of the dataset has the following changes.
+
+1. Establishment Links
+
+These have been substantially improved for establishments in the State of California thanks to the help of Sarah Quincy at Vanderbilt University. The variable x5_establishment_id is an indicator for whether an observation's establishment ID has been updated from the V1 dataset. Establishment IDs were changed for about 6.3% of the sample. The revenue weighted change is basically the same. The rates are fairly similar across years. 
+
+We also identified about 1600 establishment-year observations in the original dataset that were located in different counties in different years. These were clearly mistakes. The vast majority of these were due to bad establishment links in the ice industry with the problematic observation tending to happen in 1931. In other cases, the problem was due to the geographic variables and was not actually a bad establishment link. We have fixed all of these cases and the county should be unique within an establishment over time. 
+
+2. Firm Links
+
+These have been substantially improved thanks to the help of Sarah Quincy and Lilian Gaeto, both at Vanderbilt University. We made additional revisisions to firm IDs as well. For beverages (101), this involved more carefully separating different Coca Cola bottling firms. In textiles (216), we fixed a bug that created a large, fictitious firm. For ice (119), we fixed a number of cases of similarly named firms. Part of the difference here is that firm names have been substantially cleaned up.
+
+A problem we identified with the original firm IDs was a high rate at which establishments "moved" between firms over time. These are not strict contradictions since an establishment could change ownership over time, but the rates were implausibly high. As a consequence we have set the default to be that establishments do not change firms over time. Implementing this default was not totally straightforward since it required "collapsing" firm IDs within and across censuses. Because we worried about whether this collapsing might itself propagate errors in the original establishment and firm IDs, we then checked by hand and corrected where needed cases of firms that were created by combining over 6 original firms. In the end, there are still 1900 cases. The combining of firms led to an increase in the average number of observations per firm from 2.07 in the old data to 2.34 in the new one. 
+
+We have kept the original firm ID variable in firm_id_V1.  The variable x5_firm_id is an indicator for whether an establishment's firm ID has been updated from the V1 dataset.
+
+As a final note, it is now the case that some firms have establishments that span multiple industries such as Ford Motor company. In the original dataset, we only constructed firms within an industry. There are 653 observations that are part of a firm that spans multiple industries. 
+
+3. Geographic Linking
+
+We linked observations to the Census Places Project (Berkes et al. 2022). This linking provides a stable place name across all of the Population Censuses allowing for simple merging at a sub-county level to other datasets linked to CPP. These place variables are place_CPP, lon_cpp, lat_CPP. The variable place_CPP is the persistent name of a place across Censuses with long_CPP and lat_CPP the associated latitude and longitude of that place.
+
+The variable match_CPP defines whether an observation was matched to CPP and how. At each step, we remove cases that matched at an earlier step. We have an overall match rate of 95% (93% if we weight by revenue) with the following breakdown by how a place was matched:
+
+ 0 "Unmatched": 5%
+ 1 "Exact on place, county, and state": 87%
+ 2 "Exact county, fuzzy on place": 7%
+ 3 "Exact state and place": 0.5%
+ 4 "Exact state, fuzzy on place": 1%
+
+If we calculate the nonmatch rate at the level of the town rather than at the establishment-level, then 19% of towns are not matched. The breakdown of match rates is fairly similar across years. Industries 1002, 130, 131, and 606 have failure to match rates over 40%. 
+
+The remaining unmatched cases are a mixture of transcription errors or simply missing information on the forms. If you are interested in improving these by, for example, looking at the original images to correct the town strings, please contact us.
+
+This linking also allowed us to fix some cases where a county was incorrect while the town and state were correct. The variable ag003_fips_CPP is the county based on a match to CPP and only differs from ag003_fips if we updated the location of place based on a match in CPP. We ended up correcting the county for 3% of the observations (4.3% weighted by revenue).
+
+We note that 28 observations are missing a county FIPS code. These are due to incomplete information on the original schedules.
+
+4. Revenue in the Blast Furnaces industry (1410) in 1935
+
+An error in the construction of the total revenue variable (G000V) for this industry in 1929, 1931, and 1933 has been corrected. The value should now correspond to that reported on the original images. For 1935, because the recovered spreadsheets are incomplete and the original images not currently accessible, total revenue was imputed based on adding together the revenue received (or value of iron used in internal production) for pig iron made using charcoal and using coke. For comparison, in 1929 these products represented 96% of the total revenue of the establishments. The flag x3_g000v has been updated to reflect this.
+
+5. Creation of Persistent Observation Identifier
+
+In version 1, observations were unique on establishment ID and year, and individual establishments could be followed over time using the establishment ID. A problem with this approach is that the establishment IDs were generated "on the fly" meaning that they would change each time we created a new extract. 
+
+We realized that this is problematic if people (including us!) had been linking on establishment ID (and year). For this reason, we have now created a stable linking variable observation ID that identifies an observation-year pair.  This new variable named obs_id is a string composed of the year, industry, and a 10 digit number that is based on a hash of all the variables in the dataset. This variable, whcih is akin to the histid in IPUMS Census datasets, will not change in any future versions of the dataset. Therefore, we encourage any linking to be done using this observation ID variable.
+
+We have created code that can crosswalk between any two sets of establishment IDs by identifying sets of variables like revenue and geographic information that uniquely identify establishments. If you need to merge on establishment ID into this new version of the data, please contact us for access to the code.
+
+6. Dropped Establishments in the Ice Industry
+
+We discovered that about 400 observations in the ice industry were being dropped at some point in the build process. We have fixed this issue now.
+
+7. Fixes to Flag Variables 
+
+We fixed the variables present_*, x1_*, x2_*, and x3_*. In some cases, they were missing values when they should not have been.  The variables present_* now only have values of 0 or 1. The variables x1_*, x2_*, and x3_* can take on the values 0, 1, and the missing value ".". A missing value means that the underlying variable is not present at all in a given year. 
+
+8. Miscellaneous Edits
+
+We identified some duplicate observations and other mistaken observations in the original dataset leading to a decline in the sample size of about 120 observations.  Across industries and years, these drops represent, at most, less than 1% of the establishments and 1% of revenue. We also have cleaned up the geographic variables (beyond the CPP linking), particularly for establishments in California thanks to Sarah Quincy. There were also a few cases where the region variable was missing that we fixed. Finally, we cleaned up the incorporated variable so that only 58 observations don't have a 1 or 0 which are cases of nonsensical answers.
