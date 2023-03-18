@@ -1,0 +1,28 @@
+	args countyfips clean_county clean_state
+
+
+	replace `countyfips' ="001" if `clean_state'=="Maryland" & `clean_county'=="Allegany"
+	replace `countyfips' ="003" if `clean_state'=="Maryland" & `clean_county'=="Anne Arundel"
+	replace `countyfips' ="005" if `clean_state'=="Maryland" & `clean_county'=="Baltimore"
+	replace `countyfips' ="009" if `clean_state'=="Maryland" & `clean_county'=="Calvert"
+	replace `countyfips' ="011" if `clean_state'=="Maryland" & `clean_county'=="Caroline"
+	replace `countyfips' ="013" if `clean_state'=="Maryland" & `clean_county'=="Carroll"
+	replace `countyfips' ="015" if `clean_state'=="Maryland" & `clean_county'=="Cecil"
+	replace `countyfips' ="017" if `clean_state'=="Maryland" & `clean_county'=="Charles"
+	replace `countyfips' ="019" if `clean_state'=="Maryland" & `clean_county'=="Dorchester"
+	replace `countyfips' ="021" if `clean_state'=="Maryland" & `clean_county'=="Frederick"
+	replace `countyfips' ="023" if `clean_state'=="Maryland" & `clean_county'=="Garrett"
+	replace `countyfips' ="025" if `clean_state'=="Maryland" & `clean_county'=="Harford"
+	replace `countyfips' ="027" if `clean_state'=="Maryland" & `clean_county'=="Howard"
+	replace `countyfips' ="029" if `clean_state'=="Maryland" & `clean_county'=="Kent"
+	replace `countyfips' ="031" if `clean_state'=="Maryland" & `clean_county'=="Montgomery"
+	replace `countyfips' ="033" if `clean_state'=="Maryland" & `clean_county'=="Prince Georges"
+	replace `countyfips' ="035" if `clean_state'=="Maryland" & `clean_county'=="Queen Annes"
+	replace `countyfips' ="037" if `clean_state'=="Maryland" & `clean_county'=="St Marys"
+	replace `countyfips' ="039" if `clean_state'=="Maryland" & `clean_county'=="Somerset"
+	replace `countyfips' ="041" if `clean_state'=="Maryland" & `clean_county'=="Talbot"
+	replace `countyfips' ="043" if `clean_state'=="Maryland" & `clean_county'=="Washington"
+	replace `countyfips' ="045" if `clean_state'=="Maryland" & `clean_county'=="Wicomico"
+	replace `countyfips' ="047" if `clean_state'=="Maryland" & `clean_county'=="Worcester"
+	replace `countyfips' ="510" if `clean_state'=="Maryland" & `clean_county'=="Baltimore City"
+	

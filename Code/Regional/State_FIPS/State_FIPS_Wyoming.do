@@ -1,0 +1,27 @@
+	args countyfips clean_county clean_state
+
+
+	replace `countyfips' ="001" if `clean_state'=="Wyoming" & `clean_county'=="Albany"
+	replace `countyfips' ="003" if `clean_state'=="Wyoming" & `clean_county'=="Big Horn"
+	replace `countyfips' ="005" if `clean_state'=="Wyoming" & `clean_county'=="Campbell"
+	replace `countyfips' ="007" if `clean_state'=="Wyoming" & `clean_county'=="Carbon"
+	replace `countyfips' ="009" if `clean_state'=="Wyoming" & `clean_county'=="Converse"
+	replace `countyfips' ="011" if `clean_state'=="Wyoming" & `clean_county'=="Crook"
+	replace `countyfips' ="013" if `clean_state'=="Wyoming" & `clean_county'=="Fremont"
+	replace `countyfips' ="015" if `clean_state'=="Wyoming" & `clean_county'=="Goshen"
+	replace `countyfips' ="017" if `clean_state'=="Wyoming" & `clean_county'=="Hot Springs"
+	replace `countyfips' ="019" if `clean_state'=="Wyoming" & `clean_county'=="Johnson"
+	replace `countyfips' ="021" if `clean_state'=="Wyoming" & `clean_county'=="Laramie"
+	replace `countyfips' ="023" if `clean_state'=="Wyoming" & `clean_county'=="Lincoln"
+	replace `countyfips' ="025" if `clean_state'=="Wyoming" & `clean_county'=="Natrona"
+	replace `countyfips' ="027" if `clean_state'=="Wyoming" & `clean_county'=="Niobrara"
+	replace `countyfips' ="029" if `clean_state'=="Wyoming" & `clean_county'=="Park"
+	replace `countyfips' ="031" if `clean_state'=="Wyoming" & `clean_county'=="Platte"
+	replace `countyfips' ="033" if `clean_state'=="Wyoming" & `clean_county'=="Sheridan"
+	replace `countyfips' ="035" if `clean_state'=="Wyoming" & `clean_county'=="Sublette"
+	replace `countyfips' ="037" if `clean_state'=="Wyoming" & `clean_county'=="Sweetwater"
+	replace `countyfips' ="039" if `clean_state'=="Wyoming" & `clean_county'=="Teton"
+	replace `countyfips' ="041" if `clean_state'=="Wyoming" & `clean_county'=="Uinta"
+	replace `countyfips' ="043" if `clean_state'=="Wyoming" & `clean_county'=="Washakie"
+	replace `countyfips' ="045" if `clean_state'=="Wyoming" & `clean_county'=="Weston"
+	
