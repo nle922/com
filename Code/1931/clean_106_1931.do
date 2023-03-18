@@ -1,0 +1,99 @@
+//rename variables for industry 106 in year 1931
+
+//Create obs_id
+do "$rootDir_code/General/gen_obsID.do"
+
+rename K ag010
+
+//rename output variables
+rename AN gp_q_flour_white
+rename AO gp_v_flour_white
+rename AP gp_q_flour_graham
+rename AQ gp_v_flour_graham
+rename AR gp_q_flour_semolina
+rename AS gp_v_flour_semolina
+rename AT gp_q_flour_rye
+rename AU gp_v_flour_rye
+rename AV gp_q_flour_corn
+rename AW gp_v_flour_corn
+rename AX gp_q_flour_buckwheat
+rename AY gp_v_flour_buckwheat
+rename AZ gp_s_flour_other_1
+rename BA gp_q_flour_other_1
+rename BB gp_v_flour_other_1
+rename BC gp_s_flour_other_2
+rename BD gp_q_flour_other_2
+rename BE gp_v_flour_other_2
+rename BF gp_q_corn_meal
+rename BG gp_v_corn_meal
+rename BH gp_q_bran
+rename BI gp_v_bran
+rename BJ gp_q_feed
+rename BK gp_v_feed
+rename BL gp_q_prepared_flour
+rename BM gp_v_prepared_flour
+rename BN gp_q_cereal_corn
+rename BO gp_v_cereal_corn
+rename BP gp_q_cereal_wheat
+rename BQ gp_v_cereal_wheat
+rename BR gp_q_cereal_oats
+rename BS gp_v_cereal_oats
+rename BT gp_q_cereal_other_grains
+rename BU gp_v_cereal_other_grains
+rename BV gp_q_cereal_coffee_sub
+rename BW gp_v_cereal_coffee_sub
+rename BX gp_s_other_cereal_1
+rename BY gp_q_other_cereal_1
+rename BZ gp_v_other_cereal_1
+rename CA gp_s_all_other_1
+rename CB gp_q_all_other_1
+rename CC gp_v_all_other_1
+rename CD gp_q_alfalfa_meal
+rename CE gp_v_alfalfa_meal
+rename CF gp_q_prepared_feed
+rename CG gp_v_prepared_feed
+rename CH gp_s_other_prepared_feed_1
+rename CI gp_q_other_prepared_feed_1
+rename CJ gp_v_other_prepared_feed_1
+rename CK gp_q_malt_barley
+rename CL gp_v_malt_barley
+rename CM gp_q_malt_rye
+rename CN gp_v_malt_rye
+rename CO gp_q_sprouts
+rename CP gp_v_sprouts
+rename CQ gp_q_screenings
+rename CR gp_v_screenings
+rename CS gp_s_other_by_products
+rename CT gp_q_other_by_products
+rename CU gp_v_other_by_products
+rename CV gp_s_other_products_1
+rename CW gp_v_other_products_1
+rename CX gp_s_other_products_2
+rename CY gp_v_other_products_2
+rename CZ gp_s_other_products_3
+rename DA gp_v_other_products_3
+rename DB gp_s_other_products_4
+rename DC gp_v_other_products_4
+rename DD gp_v_all_other_products
+rename DE gp_v_custom_work
+rename DF g000v
+
+//rename input variables
+rename DG jp_q_wheat
+rename DH jp_v_wheat
+rename DI jp_q_corn
+rename DJ jp_v_corn
+rename DK jp_q_rye
+rename DL jp_v_rye
+rename DM jp_q_barley
+rename DN jp_v_barley
+rename DO jp_q_buckwheat
+rename DP jp_v_buckwheat
+rename DQ jp_q_oats
+rename DR jp_v_oats
+rename DS jp_s_other
+rename DT jp_q_other
+rename DU jp_v_other
+
+rename DV z_capacity_flour_mill
+drop DW 
