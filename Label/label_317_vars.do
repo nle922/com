@@ -1,0 +1,33 @@
+//label variables for industry 317
+
+//label output variables
+capture label var gp_q_Spirits "Output: Spirits, qt."
+capture label var gp_v_Spirits "Output: Spirits, value"
+capture label var gp_q_Rosin "Output: Rosin, qt."
+capture label var gp_v_Rosin "Output: Rosin, value"
+capture label var gp_q_Dross "Output: Rosin, qt."
+capture label var gp_v_Dross "Output: Dross, value"
+capture label var gp_s_Other_Rosin "Output: Other Rosin and Turpentine, specify"
+capture label var gp_q_Other_Rosin "Output: Other Rosin and Turpentine, qt."
+capture label var gp_v_Other_Rosin "Output: Other Rosin and Turpentine, value"
+capture label var gp_v_receipts_distilling  "Output: Receipts distilling"
+capture label var gp_q_TurpentineForOthers "Output: Turpentine made for others, gallons"
+capture label var gp_q_RosinForOthers "Output: Rosin made for others, barrels (500 lbs.)"
+capture label var gp_q_CrudeTurpentine "Crude Turpentine Distilled During the Year by This Establishment, barrels"
+capture label var gp_v_CrudeTurpentine "Crude Turpentine Distilled During the Year by This Establishment, value"
+
+//label input (and inventory) variables
+capture label var inv_q_Turpentine "Inventory: Turpentine, gallons"
+capture label var inv_q_Rosin "Inventory: Rosin, barrels (500 lbs.)"
+capture label var j_q_cupsVirgin "Inputs: Number virgin (1st year) worked during crop year, cups"
+capture label var j_q_boxesVirgin "Inputs: Number virgin (1st year) worked during crop year, boxes"
+capture label var j_q_totalVirgin "Inputs: Total virgin (1st year)"
+capture label var j_q_cupsYearling "Inputs: Number yearling (2nd year) worked during crop year, cups"
+capture label var j_q_boxesYearling "Inputs: Number yearling (2nd year) worked during crop year, boxes"
+capture label var j_q_totalYearling "Inputs: Total yearling (2nd year)"
+capture label var j_q_cupsThirdSubsequent "Inputs: Number third and subsequent years, cups"
+capture label var j_q_boxesThirdSubsequent "Inputs: Number third and subsequent years, boxes"
+capture label var j_q_totalThirdSubsequent "Inputs: Total third and subsequent years"
+capture label var j_q_cupsTotal "Inputs: Total number cups"
+capture label var j_q_boxesTotal "Inputs: Total number boxes"
+capture label var j_q_cupBoxesTotal "Inputs: Total number of cups and boxes"
